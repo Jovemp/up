@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+    defaultConfig {
+        applicationId "br.com.psousa.up"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    dexOptions {
+        preDexLibraries = false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/jersey-module-version'
+        exclude 'META-INF/services/javax.ws.rs.ext.MessageBodyReader'
+        exclude 'META-INF/services/javax.ws.rs.ext.MessageBodyWriter'
+    }
+
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile files('libs/glide-3.7.0.jar')
+    compile files('libs/jersey-client-1.19.jar')
+    compile files('libs/jersey-core-1.19.jar')
+    compile files('libs/jersey-json-1.19.jar')
+    compile files('libs/jersey-multipart-1.19.jar')
+    compile files('libs/picasso-2.5.2.jar')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.facebook.android:facebook-android-sdk:4.18.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    testCompile 'junit:junit:4.12'
+}

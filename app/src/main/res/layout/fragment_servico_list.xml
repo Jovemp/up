@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/header"
+    tools:context="br.com.psousa.up.ServicoFragment">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <Button
+                android:id="@+id/btnRegiao"
+                android:text="@string/regiao"
+                android:layout_weight="1" android:background="#dcdcdc"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btnCategoria"
+                android:text="@string/categoria"
+                android:layout_weight="1" android:background="#dcdcdc"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btnFiltros"
+                android:text="@string/filtros"
+                android:layout_weight="1" android:background="#dcdcdc"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"/>
+
+        </TableRow>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp">
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipeToRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:clipToPadding="false"
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
+                    android:listSelector="@android:color/transparent"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:scrollbars="vertical"
+                    android:name="br.com.psousa.up.ServicoFragment"
+                    app:layoutManager="StaggeredGridLayoutManager"
+                    tools:listitem="@layout/fragment_servico" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+
+
+    </TableLayout>
+
+</LinearLayout>

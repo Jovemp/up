@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_anuncio"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/anuncio" />
+        <item
+            android:id="@+id/nav_inserir_anuncio"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/inserir_anuncio" />
+        <item
+            android:id="@+id/nav_minha_conta"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/minha_conta" />
+    </group>
+
+    <item  android:title="Outras">
+
+    <menu>
+        <item
+            android:id="@+id/nav_dicas"
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/dicas" />
+        <item
+            android:id="@+id/nav_termo_uso"
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/termo_uso" />
+        <item
+            android:id="@+id/nav_avalie_google_pla"
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/avalie_google_play" />
+    </menu>
+
+    </item>
+
+</menu>
